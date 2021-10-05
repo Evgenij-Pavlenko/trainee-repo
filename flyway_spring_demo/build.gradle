@@ -1,0 +1,50 @@
+buildscript {
+    dependencies {
+        classpath 'com.h2database:h2:1.4.197'
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.5.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id "org.flywaydb.flyway" version "7.9.1"
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.flywaydb:flyway-core'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'mysql:mysql-connector-java'
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.flywaydb:flyway-core:7.9.1'
+    runtimeOnly 'org.postgresql:postgresql'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+springBoot  {
+    buildInfo()
+}
+
+flyway {
+    url = 'jdbc:postgresql://127.0.0.1:5432/mydb'
+//    url = 'jdbc:h2:file:./target/foobar'
+    user = 'admin'
+    password = 'Johnny12345'
+    schemas = ['public']
+}
