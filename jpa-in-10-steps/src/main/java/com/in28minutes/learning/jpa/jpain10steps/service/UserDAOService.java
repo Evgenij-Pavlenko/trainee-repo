@@ -11,7 +11,7 @@ import com.in28minutes.learning.jpa.jpain10steps.entity.User;
 @Repository
 @Transactional
 public class UserDAOService {
-		
+
 	@PersistenceContext
 	private EntityManager entityManager;
 	
