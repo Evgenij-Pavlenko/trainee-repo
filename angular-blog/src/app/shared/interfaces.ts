@@ -1,10 +1,10 @@
 export interface User {
-  email: string;
-  password: string;
-  returnSecureToken?: boolean;
+  email: string
+  password: string
+  returnSecureToken?: boolean
 }
 
 export interface FbAuthResponse {
-  idToken: string;
-  expiresIn: string;
+  idToken: string
+  expiresIn: string
 }

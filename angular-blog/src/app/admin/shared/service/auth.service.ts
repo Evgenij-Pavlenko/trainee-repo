@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { FbAuthResponse, User } from 'src/app/shared/interfaces';
-import { Observable, tap } from 'rxjs';
+import { catchError, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -26,7 +26,7 @@ export class AuthService {
         `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.apiKey}`,
         user
       )
-      .pipe(tap(this.setToken));
+      .pipe(tap(this.setToken), catchError(this.handleError.bind(this)));
   }
   logout() {
     this.setToken(null);
@@ -35,6 +35,9 @@ export class AuthService {
   isAuthenticated(): boolean {
     return !!this.token;
   }
+
+  private handleError(error: HttpErrorResponse) {}
+
   private setToken(response: FbAuthResponse | null) {
     console.log(response);
     if (response) {
