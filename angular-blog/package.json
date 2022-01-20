@@ -22,11 +22,11 @@
     "ngx-pagination": "^5.1.1",
     "ngx-quill": "^16.1.1",
     "rxjs": "~7.4.0",
-    "tslib": "^2.3.0",
+    "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^13.1.4",
+    "@angular-devkit/build-angular": "^0.901.13",
     "@angular/cli": "~13.0.2",
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.0",
