@@ -1,6 +1,6 @@
 <div *ngIf="posts.length; else loading">
   <div class="form-control">
-    <input type="text" placeholder="Найти пост...">
+    <input type="text" placeholder="Find post...">
   </div>
   <table>
     <thead>
@@ -23,9 +23,9 @@
           class="btn btn-link open"
           [routerLink]="['/admin', 'post', post.id, 'edit']"
         >
-          Открыть
+          Open
         </button>
-        <a (click)="remove(post.id)">Удалить</a>
+        <a (click)="remove(post.id)">Delete</a>
       </td>
     </tr>
     </tbody>
@@ -34,5 +34,5 @@
 
 
 <ng-template #loading>
-  <p class="text-center">Идет загрузка...</p>
+  <p class="text-center">Loading...</p>
 </ng-template>

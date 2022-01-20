@@ -43,13 +43,13 @@ export class AuthService {
 
     switch (message) {
       case 'INVALID_EMAIL':
-        this.error$.next('Неверный email');
+        this.error$.next('Invalid email');
         break;
       case 'INVALID_PASSWORD':
-        this.error$.next('Неверный пароль');
+        this.error$.next('Invalid пароль');
         break;
       case 'EMAIL_NOT_FOUND':
-        this.error$.next('Такого email нет');
+        this.error$.next('Invalid email');
         break;
     }
 

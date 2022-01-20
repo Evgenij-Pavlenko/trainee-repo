@@ -1,24 +1,24 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <h1>Создание нового поста</h1>
+  <h1>Create new post</h1>
 
   <div
     class="form-control"
     [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
   >
-    <label for="title">Название поста:</label>
+    <label for="title">Title:</label>
     <input id="title" type="text" formControlName="title">
     <div
       *ngIf="form.get('title').touched && form.get('title').invalid"
       class="validation"
     >
       <small *ngIf="form.get('title').errors.required">
-        Введите название поста
+        Enter title
       </small>
     </div>
   </div>
 
   <div class="form-control">
-    <label>Контент поста:</label>
+    <label>Text:</label>
     <quill-editor formControlName="text"></quill-editor>
   </div>
 
@@ -26,14 +26,14 @@
     class="form-control"
     [ngClass]="{invalid: form.get('author').touched && form.get('author').invalid}"
   >
-    <label for="author">Автор поста:</label>
+    <label for="author">Autor:</label>
     <input id="author" type="text" formControlName="author">
     <div
       *ngIf="form.get('author').touched && form.get('author').invalid"
       class="validation"
     >
       <small *ngIf="form.get('author').errors.required">
-        Введите автора поста
+        Enter autor
       </small>
     </div>
   </div>
@@ -42,5 +42,5 @@
     type="submit"
     class="btn btn-block btn-dark"
     [disabled]="form.invalid"
-  >Создать пост</button>
+  >Create post</button>
 </form>
