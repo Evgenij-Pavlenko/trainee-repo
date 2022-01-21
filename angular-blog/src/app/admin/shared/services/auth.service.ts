@@ -46,7 +46,7 @@ export class AuthService {
         this.error$.next('Invalid email');
         break;
       case 'INVALID_PASSWORD':
-        this.error$.next('Invalid пароль');
+        this.error$.next('Invalid password');
         break;
       case 'EMAIL_NOT_FOUND':
         this.error$.next('Invalid email');
